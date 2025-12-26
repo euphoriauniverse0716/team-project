@@ -31,7 +31,7 @@ section {z-index:1;}
 
 
 /* =========================
-    intro & visual section
+   intro & visual section
    ========================= */
 /* intro-text */
 .intro-line {position: relative; width: 100%; height: 400vh;}
@@ -64,7 +64,7 @@ p.text { height: 500px; transition: all 0.3s;  box-sizing: border-box;}
 .intro-video .videotxt h2 {margin-bottom: 24px;}
 
 /* =========================
-              header
+            header
    ========================= */
 header { background: rgba(0, 0, 0, 0.2); position: fixed; width: 100%; top: 0; z-index: 100; backdrop-filter: blur(67.75px); transform: translateY(-100%); transition: transform 0.4s ease-in-out, background 0.3s;}
 .innerHeader {width: 57.14%; height: 55px;margin: 0 auto; display:flex; justify-content: space-between; text-align: center; align-items: center;}
@@ -207,7 +207,7 @@ section.product-youtube { position: relative; }
 .scroll-line-path{ vector-effect:non-scaling-stroke; }
 
 /* PRODUCT-1 */
-.product-1 .main-title {-webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000),linear-gradient(rgba(255,255,255,.22), rgba(255,255,255,.22));background-repeat: no-repeat;-webkit-background-clip: text; background-clip: text;background-size: 0% 100%;background-position: 0% 0%;}    
+.product-1 .main-title {-webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000),linear-gradient(rgba(255,255,255,.22), rgba(255,255,255,.22));background-repeat: no-repeat;-webkit-background-clip: text; background-clip: text;background-size: 0% 100%;background-position: 0% 0%; margin-bottom:25px;}    
 .product-1 .inner .title-box .sub-title {margin-bottom: 24px;}
 .product-1 .img {width: 61vw; height: 902px; position: absolute; top:35%; right: 0; transform: translateY(-50%); height: 360px; max-width: none;}
 .product-1 .img img {width: 100%;}
