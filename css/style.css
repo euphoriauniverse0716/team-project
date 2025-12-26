@@ -113,33 +113,12 @@ pointer-events: none;/*768px 이상일 때 클릭 방지*/}
 
 /* intro-2. man section의 css 스타일 적용 */
 .man {width: 100vw; height: 140vh; overflow: hidden;}
-.man .inner {
-  width: 88%;
-  display: flex;
-  justify-content: flex-start;
-  margin: 300px auto;
-
-  /* ✅ 선보다 위 */
-  position: relative;
-  z-index: 3;
-}
-
-.man .textBox {
-  background-color: #fff;
-  padding-left: 0;
-  height: 453px;
-  /* ✅ 텍스트 박스는 무조건 선 위 */
-  position: relative;
-  z-index: 4;
-}
-
-
-.man .textBox .main-title { margin-bottom: 25px;
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.2); 
-    color: rgba(0, 0, 0, 0.2); /* 호환성용 */
-    /* 2. 채워질 색상 (배경을 흰색 물감으로 설정) */
+.man .inner {width: 88%; display: flex; justify-content: flex-start; margin: 300px auto; position: relative; z-index: 3;}
+.man .textBox {background-color: #fff; padding-left: 0; height: 453px; position: relative; z-index: 4;}
+.man .textBox .main-title { margin-bottom: 25px; -webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2);
+    /* 호환성용 */
     background-image: linear-gradient(#000, #000);
-    background-repeat: no-repeat;
+background-repeat: no-repeat;
     
     /* 3. 배경을 글자 모양대로 잘라냄 */
     -webkit-background-clip: text;
@@ -147,11 +126,8 @@ pointer-events: none;/*768px 이상일 때 클릭 방지*/}
 
     /* 4. 초기 상태: 물감이 0%만큼 차있음 (안 보임) */
     background-size: 0% 100%;
-    background-position: 0% 0%;
-}
+    background-position: 0% 0%;}
 .man .textBox span { font-family: "Pretendard", sans-serif; }
-/* 포인트 컬러(.red) 등 내부 스팬 처리 */
-
 .man .textBox .text-line span.c {font-family: 'Spartan', sans-serif;}
 /* =========================
    3) 이미지 레이어: 가장 위
