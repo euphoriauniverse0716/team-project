@@ -6,14 +6,10 @@ document.addEventListener('click', function(e) {
   }
 });
 
-
-/* =========================
-   0) GSAP/ScrollTrigger 등록
-   ========================= */
 gsap.registerPlugin(ScrollTrigger);
 
 /* =========================
-   1) header height → CSS 변수
+      header height
    ========================= */
 function updateHeaderHeightVar() {
   const header = document.querySelector("header");
@@ -21,13 +17,12 @@ function updateHeaderHeightVar() {
   document.documentElement.style.setProperty("--header-h", `${h}px`);
 }
 
+
+
 /* =========================
-   2) TEXT FILL (최종 해결본)
-   - pin/refresh 이후에도 항상 0%에서 시작
-   - 기존 트리거 kill → 재생성
+        text interaction
    ========================= */
 function initTextFill() {
-  // ✅ 이전 텍스트 fill 트리거 전부 제거
   ScrollTrigger.getAll().forEach((st) => {
     if (st.vars && st.vars.id && String(st.vars.id).startsWith("textFill-")) {
       st.kill();
@@ -40,10 +35,9 @@ function initTextFill() {
     const lines = title.querySelectorAll(".text-line");
     const targets = lines.length ? Array.from(lines) : [title];
 
-    // ✅ 시작값 고정 (중간값/100%로 굳는 현상 방지)
+
     gsap.set(targets, { backgroundSize: "0% 100%" });
 
-    // ✅ 섹션별 end 커스텀 (네가 쓰던 로직 유지)
     const isProduct1 = title.closest(".product-1");
     const endValue = isProduct1 ? "+=600" : "top 10%";
 
@@ -66,16 +60,12 @@ function initTextFill() {
   });
 }
 
-/* =========================
-   3) DOM 준비 후 실행
-   ========================= */
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ✅ 최초 1회 세팅
   updateHeaderHeightVar();
 
   /* =========================
-     HEADER show/hide (ScrollTrigger)
+    HEADER show/hide (ScrollTrigger)
      ========================= */
   const mainHeader = document.querySelector("header");
 
@@ -100,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     MOBILE MENU
+      header MOBILE MENU
      ========================= */
   const menuBtn = document.querySelector(".menu");
   const menuOpen = document.querySelector(".menuOpen");
@@ -114,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     리사이즈 대응 (통합 1개만)
+    리사이즈 대응 (통합 1개만)
      ========================= */
   window.addEventListener("resize", () => {
     updateHeaderHeightVar();
@@ -123,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-    1) 비디오 clip-path
+    intro-section 비디오 clip-path
      ========================= */
   gsap.timeline({
     scrollTrigger: {
@@ -225,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTrigger: {
         trigger: manSection,
         start: "top 0%",
-        end: "bottom 80%",
+        end: "bottom 40%", //남자 섹션의 선 속도 조절하기-
         scrub: true,
         invalidateOnRefresh: true,
         onRefreshInit: initPath
@@ -235,16 +225,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-    MAN 섹션: 라이트 토글
+    MAN 섹션: 이미지 밝기 변화 
      ========================= */
   const lightEl = document.querySelector(".man .img-light");
   if (lightEl) {
     gsap.timeline({
       scrollTrigger: {
         trigger: ".man",
-        start: "top 25%",
-        end: "bottom 65%",
-        scrub: 1.5
+        start: "top 30%",
+        end: "bottom 50%",
+        scrub: 1.5,
+        // markers:true
       }
     })
     .to(lightEl, { opacity: 1, ease: "sine.inOut" })
@@ -289,19 +280,17 @@ document.addEventListener("DOMContentLoaded", () => {
     "(min-width: 768px)": function () {
 
       const section = document.querySelector(".family-2");
-      const track   = document.querySelector(".family-2 .list");  // ✅ 움직일 UL
-      const cards   = gsap.utils.toArray(".family-2 .list > li"); // ✅ 카드들
+      const track   = document.querySelector(".family-2 .list");  
+      const cards   = gsap.utils.toArray(".family-2 .list > li"); 
 
       if (!section || !track || !cards.length) return;
 
-      // ✅ 이전 실행 잔상 정리
+    
       gsap.set(track, { clearProps: "transform" });
       cards.forEach(li => li.classList.remove("is-focus"));
 
-      // ✅ focusX: 화면 기준 고정 포커스 위치
       const getFocusX = () => window.innerWidth * 0.28;
 
-      // ✅ 마지막 카드 "센터"가 focusX에 오도록 필요한 이동량
       const getMaxX = () => {
         const focusX = getFocusX();
         const last = cards[cards.length - 1];
@@ -310,7 +299,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return Math.max(0, need);
       };
 
-      // ✅ 현재 focusX에 가장 가까운 카드에 is-focus 부여
       function updateFocusCard() {
         const focusX = getFocusX();
         let best = null;
@@ -329,7 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cards.forEach(li => li.classList.toggle("is-focus", li === best));
       }
 
-      // ✅ 가로 스크롤(핀) 타임라인
+
       gsap.to(track, {
         x: () => -getMaxX(),
         ease: "none",
@@ -339,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
           pin: true,
           scrub: 1,
           start: "top top",
-          end: () => "+=" + getMaxX(), // ✅ 핵심: 끝까지 정확히
+          end: () => "+=" + getMaxX(), 
           invalidateOnRefresh: true,
           onUpdate: updateFocusCard,
           onRefresh: updateFocusCard
@@ -347,11 +335,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // ✅ pin 세팅 직후: 트리거 좌표 + 텍스트 fill + 포커스 재계산 (한 번에)
+
       requestAnimationFrame(() => {
         ScrollTrigger.refresh();
-        initTextFill();     // ✅ 다른 섹션 title fill 다시 살아남
-        updateFocusCard();  // ✅ 포커스도 즉시 갱신
+        initTextFill();   
+        updateFocusCard();  
       });
     },
 
@@ -380,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     product → youtube SVG 선
+    product → youtube SVG 선
      ========================= */
   const productYoutubePath = document.querySelector("#product-youtube-path");
   if (productYoutubePath) {
@@ -399,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: ".product-1",
         start: "top top",
         endTrigger: ".youtube",
-        end: "bottom 100%",
+        end: "bottom 40%", //우측 숫자를 조절하면 속도도 조절 가능, 클수록 빨리 내려옴
         scrub: 1
       }
     });
@@ -462,7 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             // 모바일 -> PC: 2번 카드(index 1) 중앙으로
                             this.slideToLoop(1, 0); 
                         } else {
-                            // PC -> 모바일: 1번 카드(index 0) 맨 앞으로
+                        
                             this.slideToLoop(0, 0); 
                         }
                     }
