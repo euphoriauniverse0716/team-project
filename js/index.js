@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     1) 비디오 clip-path
+    1) 비디오 clip-path
      ========================= */
   gsap.timeline({
     scrollTrigger: {
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   /* =========================
-     2) 인트로 텍스트 교체 + 사라짐 처리
+    2) 인트로 텍스트 교체 + 사라짐 처리
      ========================= */
   const fixedText = document.querySelector(".textAni h1");
   const steps = gsap.utils.toArray(".textAni .text");
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     3) 인트로 중앙 선 내려오기
+    3) 인트로 중앙 선 내려오기
      ========================= */
   const introPath = document.querySelector("#linePath");
   if (introPath && steps.length) {
@@ -196,12 +196,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     4) 텍스트 채우기 애니메이션 실행 (최초)
+    4) 텍스트 채우기 애니메이션 실행 (최초)
      ========================= */
   initTextFill();
 
   /* =========================
-     MAN 섹션: SVG 라인 드로잉
+    MAN 섹션: SVG 라인 드로잉
      ========================= */
   const manSection = document.querySelector(".man");
   const path = document.querySelector("#scroll-path");
@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     MAN 섹션: 라이트 토글
+    MAN 섹션: 라이트 토글
      ========================= */
   const lightEl = document.querySelector(".man .img-light");
   if (lightEl) {
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     FAMILY-1 섹션 선 + 라이트
+    FAMILY-1 섹션 선 + 라이트
      ========================= */
   const familyPath = document.querySelector(".family-1 path");
   if (familyPath) {
@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
   .to(".family-1 .img-light", { opacity: 0, ease: "sine.inOut" });
 
   /* =========================
-     6) FAMILY-2 (GSAP 가로 스크롤 + 포커스 밝기 + 768↓ 스택)
+    6) FAMILY-2 (GSAP 가로 스크롤 + 포커스 밝기 + 768↓ 스택)
      ========================= */
   ScrollTrigger.matchMedia({
 

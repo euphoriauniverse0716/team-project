@@ -98,7 +98,6 @@ pointer-events: none;/*768px 이상일 때 클릭 방지*/}
       intro-2.MAN SECTION
    =========================== */
 
-
 /* 선 레이어 absolute 기준을 'man-stage'로 고정 */
 .man-stage {position: sticky; height: 100vh; display: flex; position: relative;transform: translateX(0px);will-change: transform;}
 
@@ -110,135 +109,37 @@ pointer-events: none;/*768px 이상일 때 클릭 방지*/}
 .man .scroll-line {overflow: visible; display: block;}
 .man .scroll-line-path {vector-effect: non-scaling-stroke;}
 
-
 /* intro-2. man section의 css 스타일 적용 */
 .man {width: 100vw; height: 140vh; overflow: hidden;}
 .man .inner {width: 88%; display: flex; justify-content: flex-start; margin: 300px auto; position: relative; z-index: 3;}
 .man .textBox {background-color: #fff; padding-left: 0; height: 453px; position: relative; z-index: 4;}
-.man .textBox .main-title { margin-bottom: 25px; -webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2);
-    /* 호환성용 */
-    background-image: linear-gradient(#000, #000);
-background-repeat: no-repeat;
-    
-    /* 3. 배경을 글자 모양대로 잘라냄 */
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    /* 4. 초기 상태: 물감이 0%만큼 차있음 (안 보임) */
-    background-size: 0% 100%;
-    background-position: 0% 0%;}
+.man .textBox .main-title { margin-bottom: 25px; -webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2);background-image: linear-gradient(#000, #000);background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%; background-position: 0% 0%;}
 .man .textBox span { font-family: "Pretendard", sans-serif; }
 .man .textBox .text-line span.c {font-family: 'Spartan', sans-serif;}
-/* =========================
-   3) 이미지 레이어: 가장 위
-   ========================= */
-.man .image-container {
-  position: absolute;
-  width: 800px;
-  flex-shrink: 0;
-  line-height: 0;
-  right: 15px;
-  /* ✅ 이미지가 제일 위 */
-  z-index: 5;
 
-  transform: translateY(300px);
-}
+/* 남자 이미지 레이어 관리 */
+.man .image-container { position: absolute; width: 800px; flex-shrink: 0; line-height: 0; right: 15px; z-index: 5; transform: translateY(300px);}
+.man .image-container img {width: 100%; height: auto; display: block;}
+.man .img-base {position: relative; z-index: 1;}
+.man .img-light {position: absolute; left: 0; top: 0; width: 100%; opacity: 0; z-index: 2; pointer-events: none;}
 
-/* 이미지 레이어 */
-.man .image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.man .img-base {
-  position: relative;
-  z-index: 1;
-}
-
-.man .img-light {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  opacity: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
-
-/* collabo */
+/* ============================
+      collaboration section
+   =========================== */
 
 /* collabo01 */
-.collabo01 {background: #000;
-    position: relative;
-    width: 100%;
-    height: 150vh;  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    overflow: hidden;
-    padding: 500px 0;
-}
-
-/* Three.js 캔버스 스타일 */
-.collabo01 canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; /* 텍스트보다 뒤 */
-    display: block;
-}
-
-/* 내부 컨텐츠 영역 */
-.collabo01 .inner {
-    position: relative;
-    z-index: 2; /* 캔버스보다 앞 */
-    width: 100%;
-    max-width: 88%;
-    margin: 0px auto;
-    text-align: center;
-    pointer-events: none; /* 마우스 이벤트가 배경(캔버스)으로 전달되도록 설정 */
-}
-
-.collabo01 .textBox {
-    display: inline-block;
-}
-
-
-.collabo01 .sub-title {
-    color: #fff;
-    margin-bottom: 34px;
-    font-weight: 500;
-}
-
-.collabo01 .main-title {
-    font-size: 70px;
-    color: #fff;
-}
+.collabo01 {background: #000; position: relative; width: 100%; height: 150vh; display: flex; justify-content: center; align-items: center; box-sizing: border-box; overflow: hidden; padding: 500px 0;}
+.collabo01 canvas {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; display: block;}
+.collabo01 .inner {position: relative; z-index: 2; width: 100%; max-width: 88%; margin: 0px auto; text-align: center; pointer-events: none;}
+.collabo01 .textBox {display: inline-block;}
+.collabo01 .sub-title {color: #fff; margin-bottom: 34px; font-weight: 500;}
+.collabo01 .main-title {font-size: 70px; color: #fff;}
 
 /* collabo02 */
 .collabo02 { width: 100%; padding: 300px 0 240px; overflow: hidden; background: #fff; color: #000;}  
 .collabo02 .inner {width: 88%; margin: 0 auto 110px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-.collabo02 .page-title {font-size: 60px;
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.2); 
-    color: rgba(0, 0, 0, 0.2); /* 호환성용 */
-    /* 2. 채워질 색상 (배경을 흰색 물감으로 설정) */
-    background-image: linear-gradient(#000, #000);
-    background-repeat: no-repeat;
-    
-    /* 3. 배경을 글자 모양대로 잘라냄 */
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    /* 4. 초기 상태: 물감이 0%만큼 차있음 (안 보임) */
-    background-size: 0% 100%;
-    background-position: 0% 0%;
-}
-
+.collabo02 .page-title {font-size: 60px; -webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000);
+background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%; background-position: 0% 0%;}
 .collabo02 .inner .btn {background: #eee; display: inline-block; padding: 13px 16px 13px 30px; border-radius: 30px; font-size: 18px; font-weight: 500;}
 .collabo02 .inner .btn > img {margin-left: 13px;}
 .collabo02 .sub-title {font-size: 30px;}
@@ -248,11 +149,21 @@ background-repeat: no-repeat;
 .collabo02 .swiper-slide .imgBox {border-radius: 30px; overflow: hidden; width: 372px; height: 580px;}
 .collabo02 .swiper-slide img {width: 100%; height: 100%; object-fit: cover;}
 .collabo02 .swiper-slide a {display: block; width: 100%; height: 100%;}
+
 /* hover박스 */
 .collabo02 .hoverBox {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); border-radius: 30px; color: #E8E8ED; padding:60px 40px 40px; box-sizing: border-box; transition: opacity 0.4s ease; opacity: 0; display: flex; flex-direction: column; justify-content: space-between;}
-
 /* hover 효과 */
 .collabo02 .swiper-slide:hover .hoverBox {opacity: 1; transition: opacity 0.4s ease;}
+
+/* 모바일 버전을 위해 데스크톱 모드에서는 숨김 내용 */
+.collabo-mobile-box {display: none; position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%); z-index: 5; pointer-events: none; padding: 30px; box-sizing: border-box; flex-direction: column; justify-content: flex-end; }
+.collabo-mobile-box .txt-group {width: 100%;display: flex; justify-content: space-between;align-items: flex-end;}
+.collabo-mobile-box .m-title {color: #fff; font-size: 24px; font-weight: 700; line-height: 1.2; text-align: left;}
+.collabo-mobile-box .icon img { width: 40px;}
+
+/* ============================
+      family section
+   =========================== */
 
 /* family-1:여성 이미지 */
 .family-1 {width: 100vw; height: auto; position: relative; overflow: hidden;}
@@ -271,23 +182,7 @@ background-repeat: no-repeat;
 /* family-2 (원본 유지) */
 .family-2 {width: 100%; height: auto; background-color: black; padding-bottom: 300px; overflow: hidden;}
 .family-2 .inner {width: 88%; height: auto; margin: auto 115px;  overflow: hidden;}
-.family-2 .inner .page-title {color: #fff; padding: 100px 0 110px 0;
- /* 1. 채워지기 전 색상 (연한 회색/투명한 흰색) */
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.2); 
-    color: rgba(0, 0, 0, 0.2); /* 호환성용 */
-
-    /* 2. 채워질 색상 (배경을 흰색 물감으로 설정) */
-    background-image: linear-gradient(#fff, #fff);
-    background-repeat: no-repeat;
-    
-    /* 3. 배경을 글자 모양대로 잘라냄 */
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    /* 4. 초기 상태: 물감이 0%만큼 차있음 (안 보임) */
-    background-size: 0% 100%;
-
-}
+.family-2 .inner .page-title {color: #fff; padding: 100px 0 110px 0; -webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#fff, #fff); background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%;}
 .family-2 .inner ul {color: #fff; display: flex; flex-wrap: nowrap; width: 5100px; margin: 0; padding: 0;}
 .family-2 .inner ul li {flex-shrink: 0; width: 750px; overflow: hidden;   margin-right: 48px; padding-right:28px;}
 .family-2 .inner ul li .img img {width: 100%; height: 100%; border-radius: 30px;} 
@@ -296,62 +191,30 @@ background-repeat: no-repeat;
 .family-2 .inner ul li .btm-txt {font-size: 2.6vw; font-weight: bold; line-height: 1.5; display: flex; justify-content: space-between; height: 80px;}
 .family-2 .inner ul li .btn {width: 3.3vw; height: 3.3vh;}
 .family-2 .inner ul li .btn img {width: 100%;}
-
-.family-2 .list li .img img{
-  /* 기본 어둡게 */
-  filter: brightness(0.35);
-  transition: filter .25s ease;
-  will-change: filter;}
-
+.family-2 .list li .img img{filter: brightness(0.35); transition: filter .25s ease; will-change: filter;}
 /* 활성 카드 */
 .family-2 .list li.is-focus .img img{filter: brightness(1);}
 
+/* ============================
+      product section
+   =========================== */
  /*product-youtube */
-
 section.product-1, section.product-2 {position: relative; overflow: hidden; min-height: 1557px;}
 section.product-1 .inner, section.product-2 .inner {width: 88%; margin: 400px auto;}
+section.product-youtube { position: relative; }
+/* product-youtube svg 인터랙션 */
+.scroll-line{ overflow:visible; display:block; }
+.scroll-line-path{ vector-effect:non-scaling-stroke; }
 
+/* PRODUCT-1 */
+.product-1 .main-title {-webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000),linear-gradient(rgba(255,255,255,.22), rgba(255,255,255,.22));background-repeat: no-repeat;-webkit-background-clip: text; background-clip: text;background-size: 0% 100%;background-position: 0% 0%;}    
 .product-1 .inner .title-box .sub-title {margin-bottom: 24px;}
-/* =========================
-   PRODUCT-1 텍스트 채움 전용 (충돌 방지)
-   ========================= */
-.product-1 .main-title {
-    -webkit-text-fill-color: rgba(0, 0, 0, 0.2); 
-    color: rgba(0, 0, 0, 0.2); /* 호환성용 */
-    /* 2. 채워질 색상 (배경을 흰색 물감으로 설정) */
-    background-image:
-    linear-gradient(#000, #000),
-    linear-gradient(rgba(255,255,255,.22), rgba(255,255,255,.22)); /* 기본 */
-
-    background-repeat: no-repeat;
-    
-    /* 3. 배경을 글자 모양대로 잘라냄 */
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    /* 4. 초기 상태: 물감이 0%만큼 차있음 (안 보임) */
-    background-size: 0% 100%;
-    background-position: 0% 0%;
-}    
-
 .product-1 .img {width: 61vw; height: 902px; position: absolute; top:35%; right: 0; transform: translateY(-50%); height: 360px; max-width: none;}
 .product-1 .img img {width: 100%;}
+
+/* PRODUCT-2 */
 .product-2 .title-box {width: 100%; display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 110px; flex-wrap: wrap;}
-.product-2 .inner .title-box .main-title {margin-bottom: 45px; margin-bottom: 25px;-webkit-text-fill-color: rgba(0, 0, 0, 0.2); 
-    color: rgba(0, 0, 0, 0.2); /* 호환성용 */
-    /* 2. 채워질 색상 (배경을 흰색 물감으로 설정) */
-    background-image: linear-gradient(#000, #000);
-    background-repeat: no-repeat;
-    
-    /* 3. 배경을 글자 모양대로 잘라냄 */
-    -webkit-background-clip: text;
-    background-clip: text;
-
-    /* 4. 초기 상태: 물감이 0%만큼 차있음 (안 보임) */
-    background-size: 0% 100%;
-    background-position: 0% 0%;
-}
-
+.product-2 .inner .title-box .main-title {margin-bottom: 45px; margin-bottom: 25px;-webkit-text-fill-color: rgba(0, 0, 0, 0.2); color: rgba(0, 0, 0, 0.2); background-image: linear-gradient(#000, #000); background-repeat: no-repeat; -webkit-background-clip: text; background-clip: text; background-size: 0% 100%; background-position: 0% 0%;}
 .product-2 .title-box .page-title span {font-family: 'Spartan', sans-serif;}
 .product-2 .title-box {background-color:#fff;}
 .product-2 .title-box .btn {background: #eee; display: inline-block; padding: 13px 16px 13px 30px; border-radius: 30px; font-size: 18px; font-weight: 500;}
@@ -369,159 +232,86 @@ section.product-1 .inner, section.product-2 .inner {width: 88%; margin: 400px au
 .product-2 ul li:hover::after {opacity: 1;}
 .product-2 ul li:hover {transform: translateY(-6px);}
 
-/*  수정: product-youtube를 레이어 기준 컨테이너로 고정 */
-section.product-youtube { position: relative; }
-
-/* top page title, subtitle, subtext */
+/* ============================
+      youtube section
+   =========================== */
+  /* youtube section 01 */
 .youtube .top {display: flex; align-items:flex-end; flex-direction: column; text-align: right; margin-bottom: 35px; padding: 300px 0 500px 0;}
 .youtube .top .top-txtBox {margin-bottom: 24px;}
 .youtube .top .top-txtBox .sub-title {margin-bottom: 24px; font-weight: 700;}
 .youtube .top .bottom-txtBox .main-title {font-weight: 700;}
 .youtube .top .bottom-txtBox .sub-txt span {font-family:"League Spartan", sans-serif;}
-
-/* SVG 선 레이어가 콘텐츠를 가리지 않도록 설정 */
 .scroll-line-layer {position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;}
-
-/*  수정: z-index 적용 범위를 product-youtube로 제한(전역 .youtube-swiper 충돌 방지) */
-.product-youtube .inner,
-.product-youtube .youtube-swiper {position: relative; z-index: 2; width:94%;}
-
-/* Scroll line interaction */
+.product-youtube .inner, .product-youtube .youtube-swiper {position: relative; z-index: 2; width:94%;}
 .wrap { position: relative; overflow-x: hidden;}
 .scroll-line-layer{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1;}
-
 /* wrap의 주요 요소는 선보다 위로 */
+.wrap > footer, .wrap > div:not(.scroll-line-layer){position:relative; z-index:2;}
+.product-youtube .scroll-line-svg{position: absolute; left: 130px; top: 1070px; transform-origin: 0 0; will-change: transform;}
 
-.wrap > footer,
-.wrap > div:not(.scroll-line-layer){position:relative; z-index:2;}
+/* youtube02 section*/
+.youtube02 {width: 100%; padding: 0 0 200px; overflow: hidden; background: #fff;}
 
-/*  수정: scroll-line-svg 전역 좌표 강제를 'man + product-youtube'로만 제한 */
-/* product-youtube: scroll line 기준점 (1920 기준 안정화) */
-.product-youtube .scroll-line-svg{
-  position: absolute;
-  left: 130px;
-  top: 1070px;
-  transform-origin: 0 0;
-  will-change: transform;
-}
+/* 1. 상단 타이틀 & 버튼 */
+.youtube02 .top {display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 50px;}
+.youtube02 .page-title {font-size: 60px; font-weight: 700; line-height: 1.2; white-space: nowrap;}
+.youtube02 .btn {display: flex; align-items: center; gap: 10px; background: #E8E8ED; padding: 13px 16px 16px 30px; border-radius: 999px; font-weight: 500; font-size: 18px; width: max-content;}
+.youtube02 .btn img { width: 34px; }
 
-  .scroll-line{ overflow:visible; display:block; }
-  .scroll-line-path{ vector-effect:non-scaling-stroke; }
+/* 2. Swiper 영역 */
+.youtube.swiper {width: 100%; overflow: visible !important; padding-bottom: 50px;}
+.youtube .swiper-wrapper {display: flex !important;box-sizing: border-box;}
+
+/* youtube 슬라이드 공통 설정 */
+.youtube .swiper-slide {display: block; flex-shrink: 0; position: relative;}
+.youtube .swiper-slide a {display: block;width: 100%;height: 100%; position: relative; border-radius: 30px;  overflow: hidden; transform: translateZ(0); }
+.youtube .swiper-slide .img-box { width: 100%; height: 100%; position: relative; }
+.youtube .swiper-slide .img-box img {width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block;}
+
+/* === 오버레이 스타일 === */
+.hover-overlay, .hover-mobile {position: absolute; top: 0; left: 0;width: 100%; height: 100%; box-sizing: border-box; z-index: 5; pointer-events: none; }
+.hover-overlay {padding: 50px 70px;display: flex; flex-direction: column; justify-content: space-between; opacity: 0; transition: opacity 0.5s ease; background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);}
+.hover-text-box { color: #fff !important; text-align: left; }
+.hover-main-title { font-size: 60px; font-weight: bold; margin-bottom: 20px; transform: translateY(20px); transition: transform 0.5s; word-break: keep-all; color: #fff !important; }
+.hover-sub-title { font-size: 30px; font-weight: bold; margin-bottom: 30px; transform: translateY(20px); transition: transform 0.5s 0.1s; color: #fff !important; }
+.hover-desc { font-size: 16px; line-height: 1.5; opacity: 0; transition: opacity 0.5s 0.2s; word-break: keep-all; color: rgba(255,255,255,0.8) !important; }
+.hover-play-btn { align-self: flex-end; width: 121px; transform: translateY(20px); transition: transform 0.5s; }
+
+/* 모바일 버전 youtube 카드 섹션 변경 스타일 */
+.hover-mobile {background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);}
+.hover-mobile .text-box { position: absolute; bottom: 30px; left: 30px; right: 30px;display: flex; justify-content: space-between; align-items: center; color: #fff;}
+.hover-mobile .main-title { font-size: 28px; font-weight: bold; margin: 0; line-height: 1.2; text-align: left; word-break: keep-all; color: #fff !important; }
+.hover-mobile .play-btn img { width: 48px; height: 48px; }
+
+/* ============================
+            footer
+   =========================== */
+footer {color: #fff; background: #1d1d1f; padding: 84px 189px 162px;}
+.footer-inner {width: 100%;}
+    /* footer-top */
+.footer-inner .footer-top {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 131px;}
+.footer-inner .footer-top .top-leftbox .family-site {width: 287px; display: flex; justify-content: space-between; border-bottom: 2px solid #fff; padding: 13px; margin-bottom: 19px;}
+.footer-inner .footer-top .top-leftbox .family-site a {display: block; font-size: 18px;}
+.footer-inner .footer-top .left-box .family-site img {width: 16px;}
+.footer-inner .footer-top .top-rightbox {width: 100%;}
+.footer-inner .footer-top .top-rightbox .gnb { display: flex; justify-content: space-between; font-size: 24px; margin-bottom: 38px;  width: 52vw;}
+.footer-inner .footer-top .top-rightbox .sns-icon {display: flex; justify-content: right; gap: 10px;}
+.footer-inner .footer-top .top-rightbox .sns-icon img {width: 40px}
+
+  /* footer-bottom */
+.footer-inner .footer-bottom {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
+.footer-inner .footer-bottom .bottom-leftbox {width: 287px; font-size: 14px;}
+.footer-inner .footer-bottom .bottom-leftbox .links {display: flex; justify-content: space-between; margin-bottom: 10px;}
+.footer-inner .footer-bottom .bottom-leftbox .links li {font-size: 14px; letter-spacing: -0.03em;}
+.footer-inner .footer-bottom .bottom-leftbox .links li:nth-child(1) {font-weight: bold;}
+.footer-inner .footer-bottom .bottom-leftbox .address {font-size: 14px; margin-bottom: 10px;}
+.footer-inner .footer-bottom .bottom-leftbox .contact-number {display: flex; gap: 6px;}
+.footer-inner .footer-bottom .bottom-rightbox {width: 100%; font-size: 14px; display: flex; align-items: baseline; margin-top: auto; justify-content: space-between;}
+.footer-inner .footer-bottom .bottom-rightbox .copyright {margin-right: 37px;}
+.footer-inner .footer-bottom .bottom-rightbox img {width: 121px; height: 24px;} 
 
 
-  footer {color: #fff; background: #1d1d1f; padding: 84px 189px 162px;}
-  .footer-inner {width: 100%;}
-  .footer-inner .footer-top {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 131px;}
-  .footer-inner .footer-top .top-leftbox .family-site {width: 287px; display: flex; justify-content: space-between; border-bottom: 2px solid #fff; padding: 13px; margin-bottom: 19px;}
-  .footer-inner .footer-top .top-leftbox .family-site a {display: block; font-size: 18px;}
-  .footer-inner .footer-top .left-box .family-site img {width: 16px;}
-  .footer-inner .footer-top .top-rightbox {width: 100%;}
-  .footer-inner .footer-top .top-rightbox .gnb { display: flex; justify-content: space-between; font-size: 24px; margin-bottom: 38px;  width: 52vw;}
-
-  .footer-inner .footer-top .top-rightbox .sns-icon {display: flex; justify-content: right; gap: 10px;}
-  .footer-inner .footer-top .top-rightbox .sns-icon img {width: 40px}
-  .footer-inner .footer-bottom {width: 100%; display: flex; justify-content: space-between; flex-wrap: wrap;}
-  .footer-inner .footer-bottom .bottom-leftbox {width: 287px; font-size: 14px;}
-  .footer-inner .footer-bottom .bottom-leftbox .links {display: flex; justify-content: space-between; margin-bottom: 10px;}
-  .footer-inner .footer-bottom .bottom-leftbox .links li {font-size: 14px; letter-spacing: -0.03em;}
-  .footer-inner .footer-bottom .bottom-leftbox .links li:nth-child(1) {font-weight: bold;}
-  .footer-inner .footer-bottom .bottom-leftbox .address {font-size: 14px; margin-bottom: 10px;}
-  .footer-inner .footer-bottom .bottom-leftbox .contact-number {display: flex; gap: 6px;}
-  .footer-inner .footer-bottom .bottom-rightbox {width: 100%; font-size: 14px; display: flex; align-items: baseline; margin-top: auto; justify-content: space-between;}
-  .footer-inner .footer-bottom .bottom-rightbox .copyright {margin-right: 37px;}
-  .footer-inner .footer-bottom .bottom-rightbox img {width: 121px; height: 24px;} 
 
 
-/* 12월 25일 8시 49분 추가 */
- /* === [YOUTUBE 02] 섹션 스타일 === */
-        .youtube02 {
-            width: 100%;
-            padding: 0 0 200px;
-            overflow: hidden;
-            background: #fff;
-        }
-
-        /* 1. 상단 타이틀 & 버튼 */
-        .youtube02 .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 50px;
-        }
-        .youtube02 .page-title {
-            font-size: 60px; font-weight: 700; line-height: 1.2; white-space: nowrap;
-        }
-        .youtube02 .btn {
-            display: flex; align-items: center; gap: 10px;
-            background: #E8E8ED; padding: 13px 16px 16px 30px; border-radius: 999px;
-            font-weight: 500; font-size: 18px; width: max-content;
-        }
-        .youtube02 .btn img { width: 34px; }
-
-        /* 2. Swiper 영역 */
-        .youtube.swiper {
-            width: 100%;
-            overflow: visible !important;
-            padding-bottom: 50px;
-        }
-        .youtube .swiper-wrapper {
-            display: flex !important;
-            box-sizing: border-box;
-        }
-        
-        /* 슬라이드 공통 설정 */
-        .youtube .swiper-slide {
-            display: block; 
-            flex-shrink: 0; 
-            position: relative;
-        }
-
-        .youtube .swiper-slide a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: relative;
-            border-radius: 30px; 
-            overflow: hidden;    
-            transform: translateZ(0); 
-        }
-
-        /* 3. 이미지 박스 & 이미지 */
-        .youtube .swiper-slide .img-box { width: 100%; height: 100%; position: relative; }
-        .youtube .swiper-slide .img-box img {
-            width: 100%; height: 100%; object-fit: cover; 
-            transition: transform 0.5s ease; display: block;
-        }
-
-        /* === 오버레이 스타일 === */
-        .hover-overlay, .hover-mobile {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%; 
-            box-sizing: border-box; z-index: 5; pointer-events: none; 
-        }
-
-        /* A. [PC용] Hover Overlay */
-        .hover-overlay {
-            padding: 50px 70px;
-            display: flex; flex-direction: column; justify-content: space-between;
-            opacity: 0; transition: opacity 0.5s ease;
-            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
-        }
-        .hover-text-box { color: #fff !important; text-align: left; }
-        .hover-main-title { font-size: 60px; font-weight: bold; margin-bottom: 20px; transform: translateY(20px); transition: transform 0.5s; word-break: keep-all; color: #fff !important; }
-        .hover-sub-title { font-size: 30px; font-weight: bold; margin-bottom: 30px; transform: translateY(20px); transition: transform 0.5s 0.1s; color: #fff !important; }
-        .hover-desc { font-size: 16px; line-height: 1.5; opacity: 0; transition: opacity 0.5s 0.2s; word-break: keep-all; color: rgba(255,255,255,0.8) !important; }
-        .hover-play-btn { align-self: flex-end; width: 121px; transform: translateY(20px); transition: transform 0.5s; }
-
-        /* B. [모바일용] Always Visible */
-        .hover-mobile {
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
-        }
-        .hover-mobile .text-box {
-            position: absolute; bottom: 30px; left: 30px; right: 30px;
-            display: flex; justify-content: space-between; align-items: center; color: #fff;
-        }
-        .hover-mobile .main-title { font-size: 28px; font-weight: bold; margin: 0; line-height: 1.2; text-align: left; word-break: keep-all; color: #fff !important; }
-        .hover-mobile .play-btn img { width: 48px; height: 48px; }
 
 

@@ -13,77 +13,114 @@ a:focus {outline: none}
 button:focus {outline: none}
 
 
-        /* 반응형 기본 요소 */
-@media screen and (max-width: 1300px){
-    .innerHeader {
-        width: 80%;
-    }
-} 
-@media screen and (max-width: 1024px) {
-    
-    /* === [1] 공통 레이아웃 재설정 === */
-    .wrap {
-        width: 100%;
-        overflow-x: hidden;
-    }
-    
-    .inner {
-        width: 88%; /* 좌우 여백 확보 */
-    }
+/* ============================
+    1919 px~ 반응형 스타일 요소 
+   =========================== */
 
-    /* 폰트 크기 축소 */
-    .main-title {
-        font-size: 6.8vw; /
-    }
-    
-    .page-title {
-        font-size: 40px; 
-    }
-    
-    .sub-title {
-        font-size: 24px;
-    }
-
-    .desc {font-size: 18px; word-break: keep-all; }
-
-    .innerHeader {width: 100%; padding: 0 31px;}
-
-    
-  }
-/* 1919 */
 @media screen and (max-width: 1919px){
-  .scroll-line-svg, .scroll-line-container {opacity: 0;}
-    section.product-1 .inner, section.product-2 .inner {margin: 300px auto;}}
+    /* svg 선 인터랙션 제거 */
+    .scroll-line-svg, .scroll-line-container {opacity: 0;}
+    /* product-youtube section 크기 제어 */
+    section.product-1 .inner, section.product-2 .inner {margin: 300px auto;}
+    }
 
+
+/* ============================
+    1700px~ 반응형 스타일 요소 
+   =========================== */
+ /* product-1 손 크기 이미지 제어 */
 @media screen and (max-width: 1700px){
-  .product-1 .img {top: 40% ;}
-}
+    .product-1 .img {top: 40%;}
+    }
+
+/* ============================
+    PC Large (1400px 이상) -> youtube 
+   =========================== */
+@media screen and (min-width: 1400px) {
+    .youtube02 .top {width: 88%; margin: 100px auto; padding: 0;}
+    .youtube.swiper { width: 100%; padding: 0; margin: 0; }
+    .youtube .swiper-slide {width: 1300px; height: 666px;}
+    .hover-mobile { display: none !important; }
+    .hover-overlay { display: flex !important; }
+    .youtube .swiper-slide:hover .hover-overlay { opacity: 1; }
+    .youtube .swiper-slide:hover img { transform: scale(1.05); filter: brightness(0.6); }
+    .youtube .swiper-slide:hover .hover-main-title,
+    .youtube .swiper-slide:hover .hover-sub-title,
+    .youtube .swiper-slide:hover .hover-play-btn { transform: translateY(0); }
+    .youtube .swiper-slide:hover .hover-desc { opacity: 1; }
+        }
+
+/* ============================
+    1400px~ 반응형 스타일 요소 
+   =========================== */
+
 /* 1400 */
 @media screen and (max-width: 1400px){
+    .main-title {font-size: 60px;}
+    .page-title {font-size: 50px;}
+    
+    /* intro-1  */
     .intro-video .videotxt p {line-height: 1.5;}
     .man .textBox {height: 330px;}
-    .main-title {font-size: 60px;}
+    /* family section */
     .family-1 .inner .text-box {top: 18%;}
-    .page-title {font-size: 50px;}
+     /* product section */
     section.product-1 {min-height: 100vh; margin-bottom: 300px;}
     .product-1 .img {top: 60%;}
     .product-1 .inner .title-box .sub-txt {background-color:#fff;}
     .product-1 .inner .title-box .sub-txt {background-color:transparent;}
-      section.product-2 .inner {margin: 100px auto 0;}
-      
+    section.product-2 .inner {margin: 100px auto 0;}
+
+    /* youtube section */
     .youtube .top {padding: 0 0 500px 0;}
-           .footer-inner .footer-top .top-rightbox .gnb {width: 100%; font-size: 20px;} 
-        .footer-inner .footer-top .top-leftbox {width: 100%;}
-            .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0 ; width: 100%; margin-bottom: 19px;} 
+    .youtube02 .page-title { font-size: 50px; }
+    .youtube02 .top { padding: 0 61px; }
+    .youtube.swiper { padding: 0 61px; }
+    .youtube .swiper-slide {width: 806px !important; height: 666px !important; margin-right: 24px !important;}
+    .hover-mobile { display: none !important;}
+    .hover-overlay { display: flex !important;}
+    .youtube .swiper-slide:hover .hover-overlay { opacity: 1;}
+    .youtube .swiper-slide:hover img { transform: scale(1.05); filter: brightness(0.6);}
+    .youtube .swiper-slide:hover .hover-main-title,
+    .youtube .swiper-slide:hover .hover-sub-title,
+    .youtube .swiper-slide:hover .hover-play-btn { transform: translateY(0);}
+    .youtube .swiper-slide:hover .hover-desc { opacity: 1;}
 
-  
-/* 1170 */
+    /* footer section */
+    .footer-inner .footer-top .top-rightbox .gnb {width: 100%; font-size: 20px;} 
+    .footer-inner .footer-top .top-leftbox {width: 100%;}
+    .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0 ; width: 100%; margin-bottom: 19px;}
+    }
+
+/* ============================
+    1300px~ 반응형 스타일 요소 
+   =========================== */
+/* header 요소 제어*/
+@media screen and (max-width: 1300px){.innerHeader {width: 80%;}} 
+
+
+/* ============================
+    1170px~ 반응형 스타일 요소
+   =========================== */
 @media screen and (max-width: 1170px) {
-  .collabo02 .page-title {margin-bottom: 25px; font-size: 50px;}}
+    .collabo02 .page-title {margin-bottom: 25px; font-size: 50px;}}
 
-
-/* 1024 */
+/* ============================
+    1024px~ 반응형 스타일 요소
+   =========================== */
 @media screen and (max-width: 1024px) {
+    /* 기본요소 */
+    .main-title {font-size: 6.8vw;}
+    .inner {width: 88%;}
+    .wrap {width: 100%;overflow-x: hidden;}
+    .page-title {font-size: 40px; }
+    .sub-title {font-size: 24px;}
+    .desc {font-size: 18px; word-break: keep-all; }
+    
+    /* header */
+    .innerHeader {width: 100%; padding: 0 31px;}
+
+    /* intro section */
     .textAni h1 {font-size: 60px;}
     .intro-video .videotxt {position: absolute; left: 60px; bottom: 70px;}
     .intro-video .videotxt h2 {font-size: 48px;}
@@ -91,13 +128,12 @@ button:focus {outline: none}
     .man {height: 117vh;}
     .man .inner {margin: 200px auto 400px;}
     .man .image-container {width: 627px;}
-    
     .man .textBox .main-title {font-size:4.6vw; line-height: 1.2;}
     .man .textBox .sub-txt {font-size: 15px; line-height: 1.5;}
+
+    /* colloabo section */
     .collabo01 .sub-title {font-size: 20px;}
     .collabo01 .main-title {font-size: 48px;}
-    /* .collabo02 .page-title {font-size:4.68vw ;} */
-  
     .collabo02 .inner {margin: 0 auto 60px; }
     .collabo02 .inner .btn {font-size: 16px; padding: 9px 13px 9px 24px;}
     .collabo02 .inner .btn img {width: 28px;}
@@ -107,10 +143,15 @@ button:focus {outline: none}
     .collabo02 .page-title {font-size: 40px; line-height: 1.3;}
     .collabo02 .page-title .break {display: block;}
     .collabo02 .inner {display: block;}
-    .product-2 ul li {min-height: 500px; border-radius: 22px;}
-    .youtube-swiper .swiper-wrapper .swiper-slide a {overflow: hidden; border-radius: 22px;} 
-    .youtube-swiper .swiper-wrapper .swiper-slide a img {border-radius: 22px;}
-    .hover-overlay {border-radius: 22px;}
+    /* hover box */
+    .collabo02 .hoverBox { display: none !important; }
+    .collabo-mobile-box { display: flex !important; }
+    .collabo02 .swiper-slide a {display: block; width: 100%; height: 100%; position: relative; overflow: hidden; transform: translateZ(0); border-radius: 22px;}
+    .collabo02 .imgBox {width: 100% !important; height: 100% !important;border-radius: 0 !important;}
+    .collabo02 .imgBox img {width: 100%; height: 100%; object-fit: cover;}
+    .collabo02 .swiper-slide {width: 372px !important;height: 580px !important;}
+    
+    /* family section */
     .family-1 .inner .text-box {padding-right: 60px; width: 50vw; top:8%}
     .family-1 .inner .text-box .sub-title {font-size:1.95vw;}
     .family-1 .inner .text-box .main-title {font-size:48px ;}
@@ -119,17 +160,14 @@ button:focus {outline: none}
     .family-2 .inner ul li .top-txt {font-size: 18px;}
     .family-2 .inner ul li .btm-txt {font-size:32px;}
     .family-2 .inner {margin: 0 auto;}
-      .family-2 .inner ul {width: 750px;}
-    .family-2 .inner ul li {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 40px;
-    overflow: hidden; }
-  .family-2 .inner ul li .img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 18px;}
+    .family-2 .inner ul {width: 750px;}
+    .family-2 .inner ul li {width: 100%;margin-right: 0;margin-bottom: 40px;overflow: hidden;}
+    .family-2 .inner ul li .img img {width: 100%;height: 100%;border-radius: 18px;}
     .family-2 .inner ul li .btn {width: 40px; height: 40px;}
+    .family-2 .inner .page-title {font-size: 40px;}
+
+     /* product section */
+    .product-2 ul li {min-height: 500px; border-radius: 22px;}
     section.product-1 .inner, section.product-2 .inner {margin: 200px auto 400px;}
     .product-1 .inner .title-box .sub-title {font-size: 20px; margin-bottom: 13px;}
     .product-1 .inner .title-box .sub-txt {font-size: 16px; line-height: 200; line-height: 1.5; background-color:transparent;}
@@ -142,59 +180,76 @@ button:focus {outline: none}
     .product-2 ul li {min-height: 500px;}
     .product-2 .title-box .btn {padding: 9px 13px 9px 24px;}
     .product-2 .title-box .btn img {width: 28px;}
-          /* footer */
+
+    /* youtube section */
+    .youtube-swiper .swiper-wrapper .swiper-slide a {overflow: hidden; border-radius: 22px;} 
+    .youtube-swiper .swiper-wrapper .swiper-slide a img {border-radius: 22px;}
+    .hover-overlay {border-radius: 22px;}
+    .youtube .top .top-txtBox .sub-title {font-size: 20px;}
+    .youtube .top .top-txtBox .main-title {font-size: 48px;}
+    .youtube .top .bottom-txtBox .sub-txt {font-size: 16px;}
+    .youtube02 .btn {padding: 9px 13px 9px 24px;}
+    .youtube02 .btn img {width: 28px;}
+    .youtube02 .page-title { font-size: 40px; }
+    .youtube02 .top { padding: 0 45px; }
+    .youtube.swiper { padding: 0 45px; }
+    .youtube .swiper-slide {width: 488px !important; height: 666px !important; margin-right: 24px !important;}
+    .youtube .swiper-slide a {border-radius: 22px;}
+    .hover-overlay { display: none !important; }
+    .hover-mobile { display: block !important; }
+
+    /* footer */
     footer {padding: 85px 61px;}
-            .footer-inner {width: 100%; height: 100%;  margin: 0;}
-            .footer-inner .footer-top {width: 100%;  flex-wrap: wrap; margin-bottom: 44px;}
-            .footer-inner .footer-top .top-leftbox {width: 100%;}
-            .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0 ; width: 100%; margin-bottom: 19px;}
-            .footer-inner .footer-top .top-rightbox {width: 100%;}
-            .footer-inner .footer-top .top-rightbox .gnb { width: 100%; }
-            .footer-inner .footer-bottom .bottom-leftbox {margin-bottom: 63px;}
-            .footer-inner .footer-bottom .bottom-rightbox  {justify-content: space-between; width: 100%;}
-.family-2 .inner .page-title {font-size: 40px;}
-.youtube .top .top-txtBox .sub-title {font-size: 20px;}
-.youtube .top .top-txtBox .main-title {font-size: 48px;}
-.youtube .top .bottom-txtBox .sub-txt {font-size: 16px;}
-.youtube02 .btn {padding: 9px 13px 9px 24px;}
-.youtube02 .btn img {width: 28px;}
-.family-2 .inner .page-title {font-size: 40px;}
-  }
-/* 768 */
-  @media screen and (max-width: 768px) {
-        .textAni h1 {font-size: 48px;}
-        .product-2 .text-line {font-size: 32px;}
-        .intro-video p img {width: 25%;}
-         .intro-video .videotxt h2 {font-size: 40px; margin-bottom: 14px; line-height: 1.3; margin-top: 10px;}
-             /* header */
+    .footer-inner {width: 100%; height: 100%;  margin: 0;}
+    .footer-inner .footer-top {width: 100%;  flex-wrap: wrap; margin-bottom: 44px;}
+    .footer-inner .footer-top .top-leftbox {width: 100%;}
+    .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0 ; width: 100%; margin-bottom: 19px;}
+    .footer-inner .footer-top .top-rightbox {width: 100%;}
+    .footer-inner .footer-top .top-rightbox .gnb { width: 100%; }
+    .footer-inner .footer-bottom .bottom-leftbox {margin-bottom: 63px;}
+    .footer-inner .footer-bottom .bottom-rightbox  {justify-content: space-between; width: 100%;}
+    }
+
+
+    /* ============================
+    768px~ 반응형 스타일 요소 
+   =========================== */
+@media screen and (max-width: 768px) {
+    /* header */
     .innerHeader {position: relative;}
     .innerHeader .gnb {display: none; }
     .innerHeader .menu {display: block; width: 24px; height: 24px; position: absolute; top: 50%; transform: translateY(-50%); right: 31px; cursor: pointer;}
     .innerHeader .menu span {display: block; background: #fff; width: 24px; height: 3px; position: absolute; border-radius: 3px;}
     .innerHeader .menu span.a {top: 20%;}
     .innerHeader .menu span.b {bottom: 20%;}  
-         .man {height: 110vh; padding:0;}
-         .man .inner {margin:140px auto;}
-         .man .image-container {position: absolute; width: 78%; flex-shrink: 0; line-height: 0; right: 15px; bottom: 40%; z-index: 5; transform: translateY(480px);}
-         .man .textBox .main-title {font-size: 40px;}
-        
-         .collabo01 {height: 100vh;}
-         .collabo01 .sub-title {font-size: 18px;}
-        .collabo01 .main-title {font-size: 40px;}
-        .collabo02 {padding-top: 200px;}
+    /* intro section */
+    .textAni h1 {font-size: 48px;}
+    .intro-video p img {width: 25%;}
+    .intro-video .videotxt h2 {font-size: 40px; margin-bottom: 14px; line-height: 1.3; margin-top: 10px;}
+    .man {height: 110vh; padding:0;}
+    .man .inner {margin:140px auto;}
+    .man .image-container {position: absolute; width: 78%; flex-shrink: 0; line-height: 0; right: 15px; bottom: 40%; z-index: 5; transform: translateY(480px);}
+    .man .textBox .main-title {font-size: 40px;}
+    
+    /*collabo section  */
+    .collabo01 {height: 100vh;}
+    .collabo01 .sub-title {font-size: 18px;}
+    .collabo01 .main-title {font-size: 40px;}
+    .collabo02 {padding-top: 200px;}
     .collabo02 .swiper {padding: 0px 64px;}
     .collabo02 .page-title {font-size: 40px;}
+    /* collabo hover */
+    .collabo02 .inner, .collabo02 .swiper.collabo {padding-left: 45px; padding-right: 45px;}
+    .collabo02 .swiper-slide {width: 315px !important;height: 491px !important;}
+    .collabo02 .swiper-slide a { border-radius: 18px;}
+
+    /* product section */
     section.product-1 .inner {margin: 200px auto;}
-    .product-1 .img {width: 82.24vw;
-        position: absolute;
-        top: 65%;
-        right: 0;
-        transform: translateY(-50%);
-        height: 360px;
-        max-width: none;}
+    .product-1 .img {width: 82.24vw; position: absolute; top: 65%; right: 0; transform: translateY(-50%); height: 360px; max-width: none;}  
     .product-1 .inner .title-box .sub-title {font-size: 18px;}
     .product-1 .inner .title-box .main-title {font-size:40px;}
     section.product-2 .inner {margin: 300px auto 0;}
+    .product-2 .text-line {font-size: 32px;}
     .product-2 ul {display: block;}
     .product-2 ul li {width: 100%; margin-bottom: 48px; position: relative; border-radius: 18px;}
     .product-2 ul li:first-child a .img img {width: 80%; } 
@@ -202,322 +257,130 @@ button:focus {outline: none}
     .product-2 ul li:last-child a .img img {position: absolute; right: 0; width: 80%;}
     .product-2 ul li a .card-title {font-size: 30px;}
     .product-2 ul li a .desc {font-weight: 300;}
+
+    /* family section */
     .family-1 .inner .text-box {padding-right: 22px;}
-   .family-1 .inner .text-box .sub-title {font-size:18px;}
-   .family-1 .inner .text-box .main-title {font-size:40px;}
-   .family-1 .inner .text-box .page-title {font-size:32px;}
+    .family-1 .inner .text-box .sub-title {font-size:18px;}
+    .family-1 .inner .text-box .main-title {font-size:40px;}
+    .family-1 .inner .text-box .page-title {font-size:32px;}
     .family-1 .inner .text-box .desc {font-size:16px;}
-  .family-2 .inner {margin: auto;}
-  .family-2 .inner ul li .btm-txt {font-size: 28px;}
+    .family-2 .inner {margin:  0auto;}
+    .family-2 .inner ul {display: flex; flex-direction: column; width: 100%; transform: none !important; margin-right: 0;margin-bottom: 40px; overflow: hidden; }
+    .family-2 .inner ul li .btm-txt {font-size: 28px;}
+    .family-2 .inner ul li {padding-right: 0;}
+    .family-2 {padding-bottom: 120px;}
+    .family-2 .inner ul li .img img {width: 100%; height: 100%; border-radius: 18px;}
+    .family-2 .list li .img img {filter: brightness(1) !important;}
 
-  .family-2 .inner ul li {padding-right: 0;}
-  .family-2 {
-    padding-bottom: 120px;
-  }
+    /* youtube section */
+    .youtube .top .top-txtBox .main-title {font-size: 40px;}
+    .youtube .top .top-txtBox .sub-title {font-size: 18px;}
+    .youtube .top .bottom-txtBox .sub-txt{font-size: 16px;}
+    .youtube02 .page-title { font-size: 32px; }
+    .youtube02 .top { flex-wrap: wrap; gap: 20px; padding: 0 24px; }
+    .youtube.swiper { padding: 0 24px; }
+    .youtube .swiper-slide {width: 315px !important; height: 479px !important; margin-right: 24px !important;}
+    .youtube .swiper-slide a {border-radius: 18px;}
+    .hover-overlay { display: none !important; }
+    .hover-mobile { display: block !important; }
+    .hover-mobile .main-title { font-size: 24px; }
 
-  .family-2 .inner {
-    margin: 0 auto;
-  }
-
-  .family-2 .inner ul {
-    display: flex;
-    flex-direction: column;   /* 세로 */
-    width: 100%;
-    transform: none !important; /* GSAP x값 제거 */
-  }
-
- .family-2 .inner ul li {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 40px;
-    overflow: hidden; 
-  }
-
-  .family-2 .inner ul li .img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 18px;
-  }
+    /* footer */
+    .footer-inner .footer-top .top-rightbox {width: 100%; flex-wrap: wrap;}
+    .footer-inner .footer-top .top-rightbox .gnb {width: 100%; flex-wrap: wrap;}
+    .footer-inner .footer-top .top-rightbox .gnb li {width: 100%; margin-bottom: 8px; padding: 10px 0;}
+    .footer-inner .footer-bottom .bottom-rightbox .copyright {margin-right: 0; width: 100%; margin-bottom: 10px; font-size: 12px;}
+    }
 
 
-  /* 밝기 효과도 모바일에선 의미 없으니까 */
-  .family-2 .list li .img img {
-    filter: brightness(1) !important;
-  }
-  .youtube .top .top-txtBox .main-title {font-size: 40px;}
-  .youtube .top .top-txtBox .sub-title {font-size: 18px;}
-  .youtube .top .bottom-txtBox .sub-txt{font-size: 16px;}
-           /* footer */
- 
-            .footer-inner .footer-top .top-rightbox {width: 100%; flex-wrap: wrap;}
-            .footer-inner .footer-top .top-rightbox .gnb {width: 100%; flex-wrap: wrap;}
-            .footer-inner .footer-top .top-rightbox .gnb li {width: 100%; margin-bottom: 8px; padding: 10px 0;}
-            .footer-inner .footer-bottom .bottom-rightbox .copyright {margin-right: 0; width: 100%; margin-bottom: 10px; font-size: 12px;}
-  }
+/* ============================
+    650px~ 반응형 스타일 요소 
+   =========================== */
 
-}
-/* 600 */
-      @media screen and (max-width: 650px){
-          .textAni h1 {font-size: 30px;}
-      }
+   /* intro section */
+@media screen and (max-width: 650px){
+    .textAni h1 {font-size: 30px;}
+    }
 
-/* 600 */
-      @media screen and (max-width: 600px){
-          
-            /* footer */
-            footer {padding: 82px 24px;}
-            .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0; width: 100%; margin-bottom: 19px;}
-            .footer-inner .footer-bottom .bottom-rightbox {flex-wrap: wrap;}
-            .footer-inner .footer-top .top-rightbox .sns-icon {justify-content: left;  
-        }}
+    /* 600 */
+@media screen and (max-width: 600px){
+    /* footer */
+    footer {padding: 82px 24px;}
+    .footer-inner .footer-top .top-leftbox .family-site {padding: 13px 0; width: 100%; margin-bottom: 19px;}
+    .footer-inner .footer-bottom .bottom-rightbox {flex-wrap: wrap;}
+    .footer-inner .footer-top .top-rightbox .sns-icon {justify-content: left;  }
+    }
 
-        /* 390 */
-      @media screen and (max-width: 395px) {
-        .textAni h1 {font-size: 25px;}
-        .intro-video .videotxt {position: absolute; left: 25px; bottom: 40px;}
-        .intro-video .videotxt img {width: 46px; height: 10px;}
-        .intro-video .videotxt h2 {font-size: 30px; line-height: 1.2; margin-bottom: 9px;}
-        .intro-video .videotxt .sub-txt {font-size: 14px;}
+/* ============================
+    390px~ 반응형 스타일 요소 
+   =========================== */
+@media screen and (max-width: 395px) { 
         /* header */
-        .menuOpen .list {padding: 31px;}
-        .man {height: 86vh;}
-        .man .textBox .main-title {font-size: 30px;}
-        .man .textBox .sub-txt {font-size: 0px;}
-        .man .inner {margin:140px auto;}
-        .man .image-container {position: absolute; width: 78%; flex-shrink: 0; line-height: 0; right: 15px; top: 45%; z-index: 5; transform: translateY(0px);}
-        .collabo01 {height: 700px; padding: 300px 0;}
-        .collabo01 .sub-title {font-size: 14px; margin-bottom: 6px;}
-        .collabo01 .main-title {font-size: 20px;}
-        .collabo02 {padding-top: 100px;}
-        .collabo02 .inner {padding: 0 24px;}
-        .collabo02 .swiper {padding: 0 24px;}
-        .collabo02 .page-title {font-size: 30px;}
-        .family-1 .inner .text-box {position: absolute; left: -200px; top: 0; width: auto;}
-        .family-1 .inner .text-box .desc {opacity: 0;}
-        .family-2 .inner .page-title {padding-top: 150px;}
-        .family-2 .inner ul li .top-txt {font-size: 14px;}
-        .family-2 .inner ul li .btm-txt {font-size: 20px;}
-        .family-2 {padding-bottom: 0;}
-        .family-2 .inner ul li .btn {width: 30px; height: 30px;}
-        .product-2 .title-box {margin-bottom: 60px;}
-        .product-2 ul li a .card-title {font-size: 24px;}
-        .product-2 ul li {min-height: 500px; border-radius: 12px;}
-        .product-2 ul li a .desc {font-size: 15px; font-weight: 300;}
-        .main-title .text-line {font-size: 30px;}
-        .page-title .text-line {font-size: 24px;}
-      .family-2 .inner .page-title {font-size: 24px;}
-      section.product-1 .inner {margin: 100px auto;}
-      .product-1 .inner .title-box .sub-title {font-size: 14px;}
-      .product-1 .inner .title-box .main-title {font-size: 30px;}
-      .product-1 .inner .title-box .sub-txt {opacity: 0;}
-      .product-1 .img {width: 90.24vw; position: absolute; top: 50%; right: 0;}
-       /* Footer */
-       footer { padding: 50px 20px; }
-/* 7시 50분 추가 */
-.family-1 .inner .text-box .sub-title {margin-bottom: 10px; font-size: 14px;}
-.collabo02 .page-title {font-size: 24px;}
-.product-2 .page-title {font-size: 24px; margin-bottom:25px;}
-.product-2 ul li a .card-title {font-size: 18px;}
-.product-2 ul li a .desc {font-size: 14px;}
-section.product-2 .inner {margin: 40px auto;}
-.youtube .top {padding: 100px 0 200px 0;}
-.youtube .top .top-txtBox .sub-title {font-size: 14px;}
-.youtube .top .top-txtBox .main-title {font-size: 30px;}
-.youtube .top .bottom-txtBox .sub-txt {opacity: 0;}
-.youtube02 .top {margin-bottom: 60px;}
-.man .image-container {position: absolute; width: 78%; flex-shrink: 0; line-height: 0; right: 15px; top: 47%; z-index: 5; transform: translateY(0px);}      
-}
-
-@media screen and (max-width: 1024px) {
-  .page-title {font-size:40px;}}
-
-
-/* ========================================= */
-/* [COLLABO 02] 최종 반응형 & 토글 설정 */
-/* ========================================= */
-
-/* 1. [기본 설정] 모바일 박스는 PC에서 아예 안 보이게 숨김 (OFF) */
-.collabo-mobile-box {
-    display: none; 
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%; height: 100%;
-    /* 배경: 아래가 진하고 위로 갈수록 투명해지는 그라데이션 */
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-    z-index: 5;
-    pointer-events: none; /* 클릭은 통과시켜서 링크 눌리게 함 */
-    padding: 30px;
-    box-sizing: border-box;
+    .menuOpen .list {padding: 31px;}
     
-    /* 내용물 정렬 (글씨 왼쪽, 아이콘 오른쪽) */
-    flex-direction: column;
-    justify-content: flex-end; 
-}
+    /* intro section */
+    .textAni h1 {font-size: 25px;}
+    .intro-video .videotxt {position: absolute; left: 25px; bottom: 40px;}
+    .intro-video .videotxt img {width: 46px; height: 10px;}
+    .intro-video .videotxt h2 {font-size: 30px; line-height: 1.2; margin-bottom: 9px;}
+    .intro-video .videotxt .sub-txt {font-size: 14px;}
+    .man {height: 86vh;}
+    .man .textBox .main-title {font-size: 30px;}
+    .man .textBox .sub-txt {font-size: 0px;}
+    .man .inner {margin:140px auto;}
+    .man .image-container {position: absolute; width: 78%; flex-shrink: 0; line-height: 0; right: 15px; top: 47%; z-index: 5; transform: translateY(0px);}
 
-/* 모바일 텍스트 디자인 */
-.collabo-mobile-box .txt-group {
-    width: 100%;
-    display: flex; 
-    justify-content: space-between; /* 양옆으로 찢기 */
-    align-items: flex-end;
-}
-.collabo-mobile-box .m-title {
-    color: #fff;
-    font-size: 24px; 
-    font-weight: 700; 
-    line-height: 1.2;
-    text-align: left;
-}
-.collabo-mobile-box .icon img { width: 40px; }
+    /* collabo section */
+    .collabo01 {height: 700px; padding: 300px 0;}
+    .collabo01 .sub-title {font-size: 14px; margin-bottom: 6px;}
+    .collabo01 .main-title {font-size: 20px;}
+    .collabo02 {padding-top: 100px;}
+    .collabo02 .inner {padding: 0 24px;}
+    .collabo02 .swiper {padding: 0 24px;}
+    .collabo02 .page-title {font-size: 24px;}
+    /* collabo hover */
+    .collabo02 .inner, .collabo02 .swiper.collabo {padding-left: 24px; padding-right: 24px;}
+    .collabo02 .swiper-slide {width: 315px !important; height: 491px !important;}
+    .collabo02 .swiper-slide a {border-radius: 12px;}
+    .collabo-mobile-box .m-title {font-size: 20px;}
 
-
-/* ========================================= */
-/* [반응형 구간 설정] - 여기서 껐다 켰다 함 */
-/* ========================================= */
-
-/* [1] 1024px 이하 (여기서부터 모바일 모드 ON) */
-@media screen and (max-width: 1024px) {
+    /* family section */
+    .family-1 .inner .text-box {position: absolute; left: -200px; top: 0; width: auto;}
+    .family-1 .inner .text-box .desc {opacity: 0;}
+    .family-1 .inner .text-box .sub-title {margin-bottom: 10px; font-size: 14px;}
+    .family-2 .inner .page-title {padding-top: 150px;}
+    .family-2 .inner ul li .top-txt {font-size: 14px;}
+    .family-2 .inner ul li .btm-txt {font-size: 20px;}
+    .family-2 {padding-bottom: 0;}
+    .family-2 .inner ul li .btn {width: 30px; height: 30px;}
     
-    /* 1. PC용 호버 효과 끄기 (OFF) */
-    .collabo02 .hoverBox { display: none !important; }
+    /* product section */
+    section.product-1 .inner {margin: 100px auto;}
+    .product-1 .inner .title-box .sub-title {font-size: 14px;}
+    .product-1 .inner .title-box .main-title {font-size: 30px;}
+    .product-1 .inner .title-box .sub-txt {opacity: 0;}
+    .product-1 .img {width: 90.24vw; position: absolute; top: 50%; right: 0;}
+    section.product-2 .inner {margin: 40px auto;}
+    .product-2 .title-box {margin-bottom: 60px;}
+    .product-2 .page-title {font-size: 24px; margin-bottom:25px;}
+    .product-2 ul li a .card-title {font-size: 18px;}
+    .product-2 ul li {min-height: 500px; border-radius: 12px;}
+    .product-2 ul li a .desc {font-size: 14px; font-weight: 300;}
+    .main-title .text-line {font-size: 30px;}
+    .page-title .text-line {font-size: 24px;}
+
+    /* family section */
+    .family-2 .inner .page-title {font-size: 24px;}
+
+    /* youtube section */
+    .youtube .top {padding: 100px 0 200px 0;}
+    .youtube .top .top-txtBox .sub-title {font-size: 14px;}
+    .youtube .top .top-txtBox .main-title {font-size: 30px;}
+    .youtube .top .bottom-txtBox .sub-txt {opacity: 0;}
+    .youtube02 .top {margin-bottom: 60px;}
     
-    /* 2. 모바일용 박스 켜기 (ON - Flex로 켜야 정렬 유지됨) */
-    .collabo-mobile-box { display: flex !important; }
-
-    /* 3. 둥근 모서리 & 이미지 자르기 (Safari 버그 해결) */
-    .collabo02 .swiper-slide a {
-        display: block;
-        width: 100%; height: 100%;
-        position: relative;
-        overflow: hidden; 
-        transform: translateZ(0); 
-        border-radius: 22px; /* 1024px 기준 */
-    }
-
-    /* 4. 이미지 꽉 채우기 */
-    .collabo02 .imgBox {
-        width: 100% !important; height: 100% !important;
-        border-radius: 0 !important;
-    }
-    .collabo02 .imgBox img {
-        width: 100%; height: 100%; object-fit: cover;
-    }
-
-    /* 5. 카드 크기 (PC 사이즈 유지) */
-    .collabo02 .swiper-slide {
-        width: 372px !important;
-        height: 580px !important;
-    }
+    /* Footer */
+    footer { padding: 50px 20px; }
 }
 
-/* [2] 768px 이하 (태블릿) */
-@media screen and (max-width: 768px) {
-    /* 좌우 여백 */
-    .collabo02 .inner,
-    .collabo02 .swiper.collabo {
-        padding-left: 45px; 
-        padding-right: 45px;
-    }
-
-    /* 카드 크기 변경 */
-    .collabo02 .swiper-slide {
-        width: 315px !important;
-        height: 491px !important;
-    }
-
-    /* 모서리 조금 덜 둥글게 */
-    .collabo02 .swiper-slide a { border-radius: 18px; }
-}
-
-/* [3] 390px 이하 (모바일) */
-@media screen and (max-width: 395px) {
-    /* 좌우 여백 */
-    .collabo02 .inner,
-    .collabo02 .swiper.collabo {
-        padding-left: 24px; 
-        padding-right: 24px;
-    }
-
-    /* 카드 크기 유지 */
-    .collabo02 .swiper-slide {
-        width: 315px !important;
-        height: 491px !important;
-    }
-
-    /* 모서리 더 작게 */
-    .collabo02 .swiper-slide a { border-radius: 12px; }
-
-    /* 글씨 크기 조정 */
-    .collabo-mobile-box .m-title { font-size: 20px; }
-}
-      
-
-/* ================================================== */
-        /* ★ 반응형 미디어 쿼리 ★ */
-        /* ================================================== */
-
-        /* [1] 모바일 ( ~ 767px) */
-        @media screen and (max-width: 767px) {
-            .youtube02 .page-title { font-size: 32px; }
-            .youtube02 .top { flex-wrap: wrap; gap: 20px; padding: 0 24px; }
-            .youtube.swiper { padding: 0 24px; }
-            .youtube .swiper-slide {
-                width: 315px !important; height: 479px !important; margin-right: 24px !important;
-            }
-            .youtube .swiper-slide a {border-radius: 18px;}
-            .hover-overlay { display: none !important; }
-            .hover-mobile { display: block !important; }
-            .hover-mobile .main-title { font-size: 24px; }
-        }
-
-        /* [2] 태블릿 (768px ~ 1024px) */
-        @media screen and (min-width: 768px) and (max-width: 1024px) {
-            .youtube02 .page-title { font-size: 40px; }
-            .youtube02 .top { padding: 0 45px; }
-            .youtube.swiper { padding: 0 45px; }
-            .youtube .swiper-slide {
-                width: 488px !important; height: 666px !important; margin-right: 24px !important;
-            }
-            .youtube .swiper-slide a {border-radius: 22px;}
-            .hover-overlay { display: none !important; }
-            .hover-mobile { display: block !important; }
-        }
-
-        /* [3] PC Small (1025px ~ 1399px) -> 호버 적용 */
-        @media screen and (min-width: 1025px) and (max-width: 1399px) {
-            .youtube02 .page-title { font-size: 50px; }
-            .youtube02 .top { padding: 0 61px; }
-            .youtube.swiper { padding: 0 61px; }
-            .youtube .swiper-slide {
-                width: 806px !important; height: 666px !important; margin-right: 24px !important;
-            }
-            .hover-mobile { display: none !important; }
-            .hover-overlay { display: flex !important; }
-            
-            .youtube .swiper-slide:hover .hover-overlay { opacity: 1; }
-            .youtube .swiper-slide:hover img { transform: scale(1.05); filter: brightness(0.6); }
-            .youtube .swiper-slide:hover .hover-main-title,
-            .youtube .swiper-slide:hover .hover-sub-title,
-            .youtube .swiper-slide:hover .hover-play-btn { transform: translateY(0); }
-            .youtube .swiper-slide:hover .hover-desc { opacity: 1; }
-        }
-
-        /* [4] PC Large (1400px 이상) -> 중앙 정렬 */
-        @media screen and (min-width: 1400px) {
-            .youtube02 .top {
-                width: 88%; margin: 100px auto; padding: 0;
-            }
-            .youtube.swiper { width: 100%; padding: 0; margin: 0; }
-            .youtube .swiper-slide {
-                width: 1300px; height: 666px;
-            }
-            .hover-mobile { display: none !important; }
-            .hover-overlay { display: flex !important; }
-            
-            .youtube .swiper-slide:hover .hover-overlay { opacity: 1; }
-            .youtube .swiper-slide:hover img { transform: scale(1.05); filter: brightness(0.6); }
-            .youtube .swiper-slide:hover .hover-main-title,
-            .youtube .swiper-slide:hover .hover-sub-title,
-            .youtube .swiper-slide:hover .hover-play-btn { transform: translateY(0); }
-            .youtube .swiper-slide:hover .hover-desc { opacity: 1; }
-        }
+        
