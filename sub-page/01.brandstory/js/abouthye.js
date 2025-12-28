@@ -264,7 +264,7 @@ ScrollTrigger.matchMedia({
         //         trigger: '.sec1',
         //         start: 'top bottom',
         //         end: '0% 70%',
-		// 					markers: true,
+		// 					markers: false,
         //         scrub: 1
         //     }
         // });
