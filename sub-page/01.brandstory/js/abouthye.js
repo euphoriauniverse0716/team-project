@@ -280,7 +280,7 @@ ScrollTrigger.matchMedia({
       start: 'top 70%',
       end: '+=400',
       scrub: 1,
-      markers: true
+      markers: false
     }
   }
 );
@@ -296,7 +296,7 @@ ScrollTrigger.matchMedia({
       start: 'top 40%',
       end: '+=400',
       scrub: 1,
-      markers: true
+      markers: false
     }
   }
 );
@@ -312,7 +312,7 @@ ScrollTrigger.matchMedia({
       start: 'top 40%',
       end: '+=400',
       scrub: 1,
-      markers: true
+      markers: false
     }
   }
 );
