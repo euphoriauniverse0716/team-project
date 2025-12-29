@@ -223,7 +223,7 @@ button:focus {outline: none}
     .innerHeader .menu span.a {top: 20%;}
     .innerHeader .menu span.b {bottom: 20%;}  
     /* intro section */
-    .textAni h1 {font-size: 48px;}
+    .textAni h1 {font-size: 55px;}
     .intro-video p img {width: 25%;}
     .intro-video .videotxt h2 {font-size: 40px; margin-bottom: 14px; line-height: 1.3; margin-top: 10px;}
     .man {height: 110vh; padding:0;}
